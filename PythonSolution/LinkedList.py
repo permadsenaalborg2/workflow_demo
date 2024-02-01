@@ -5,7 +5,7 @@ class Element:
 
     # is self less that el
     def is_greater(self, el):
-        if type(self.data) == type(el.data):
+        if type(self.data) is type(el.data):
             return self.data > el.data
         else:
             return str(self.data) > str(el.data)
@@ -16,8 +16,8 @@ class LinkedList:
     def __init__(self):
         self.__first = None
 
-    def __str__(self):
-        return "LinkedList with " + str(self.count()) + " elements"
+#    def __str__(self):
+#        return "LinkedList with " + str(self.count()) + " elements"
 
     def count(self):
         counter = 0
@@ -46,9 +46,6 @@ class LinkedList:
             output = output + str(ref.data) + ", "
             ref = ref.next
         return output
-
-    def print(self):
-        print(self)
 
     def sort(self):
         if self.__first is not None:
